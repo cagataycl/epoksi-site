@@ -225,7 +225,7 @@ export const TESTIMONIALS: Testimonial[] = [
     role: 'Fabrika Sahibi',
     company: 'Yılmaz Metal Sanayi',
     content:
-      'Fabrikamızın 5.000 m² zemin alanını EpoksiPro ile kapladık. Hem süreç hem de sonuç tam beklediğimiz gibi oldu. Ekip zamanında geldi, işi zamanında bitirdi. Kaliteden hiç ödün verilmedi. Kesinlikle tavsiye ederim.',
+      'Fabrikamızın 5.000 m² zemin alanını EpoksiCLniz ile kapladık. Hem süreç hem de sonuç tam beklediğimiz gibi oldu. Ekip zamanında geldi, işi zamanında bitirdi. Kaliteden hiç ödün verilmedi. Kesinlikle tavsiye ederim.',
     rating: 5,
   },
   {
@@ -234,7 +234,7 @@ export const TESTIMONIALS: Testimonial[] = [
     role: 'Interior Designer',
     company: 'Kaya Design Studio',
     content:
-      'Müşterilerime her zaman EpoksiPro\'yu öneriyorum. 3D ve metalik zemin projelerinde gösterdikleri ustalık inanılmaz. Son projemizde okyanus temalı 3D zemin yaptılar — misafirlerimiz gözlerine inanamadı!',
+      'Müşterilerime her zaman EpoksiCLniz\'yu öneriyorum. 3D ve metalik zemin projelerinde gösterdikleri ustalık inanılmaz. Son projemizde okyanus temalı 3D zemin yaptılar — misafirlerimiz gözlerine inanamadı!',
     rating: 5,
   },
   {
@@ -243,7 +243,7 @@ export const TESTIMONIALS: Testimonial[] = [
     role: 'Otel Genel Müdürü',
     company: 'Grand Boutique Hotel',
     content:
-      'Otelimizdeki lobby ve restoran alanlarını EpoksiPro ile yeniledik. Misafirlerimizden aldığımız geri bildirimler olağanüstü. İş kalitesi, temizlik ve profesyonellik açısından tam puan. Teşekkürler!',
+      'Otelimizdeki lobby ve restoran alanlarını EpoksiCLniz ile yeniledik. Misafirlerimizden aldığımız geri bildirimler olağanüstü. İş kalitesi, temizlik ve profesyonellik açısından tam puan. Teşekkürler!',
     rating: 5,
   },
   {

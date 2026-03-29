@@ -41,7 +41,7 @@ export const BREAKPOINTS = {
 } as const;
 
 export const SITE = {
-  name: 'EpoksiPro',
+  name: 'EpoksiCLniz',
   tagline: 'Zeminlerinizi Sanat Eserine Dönüştürüyoruz',
   phone: '+90 532 000 00 00',
   whatsapp: '+905320000000',

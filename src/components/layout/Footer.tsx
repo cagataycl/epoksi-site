@@ -172,7 +172,7 @@ export default function Footer() {
       <div className="border-t border-white/8">
         <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-3">
           <p className="text-[var(--color-gray-400)] text-xs">
-            © {new Date().getFullYear()} EpoksiPro. Tüm hakları saklıdır.
+            © {new Date().getFullYear()} EpoksiCLniz. Tüm hakları saklıdır.
           </p>
           <div className="flex items-center gap-4">
             <Link

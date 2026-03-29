@@ -26,7 +26,7 @@ export default function WhyUs() {
     <section id="hakkimizda" className="py-28 bg-[var(--color-dark-2)]">
       <div className="max-w-7xl mx-auto px-6">
         <SectionTitle
-          label="Neden EpoksiPro?"
+          label="Neden EpoksiCLniz?"
           title="Farkımızı"
           highlight="Hissedeceksiniz"
           subtitle="Her projede aynı özen, aynı kalite. İşte bizi tercih etmeniz için 6 güçlü neden."
