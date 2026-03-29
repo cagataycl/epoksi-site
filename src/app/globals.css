@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+/* ============================================================
+   CSS Custom Properties — Design System
+   ============================================================ */
+:root {
+  /* Dark backgrounds */
+  --color-dark: #0a0b0e;
+  --color-dark-2: #111827;
+  --color-dark-card: #1c2333;
+  --color-dark-strip: #141b2d;
+
+  /* Brand accent — gold/amber */
+  --color-gold: #c8a951;
+  --color-gold-light: #e8c96a;
+  --color-gold-dark: #a88b35;
+
+  /* CTA orange */
+  --color-orange: #ff6b35;
+  --color-orange-hover: #e85a24;
+
+  /* Neutral */
+  --color-white: #ffffff;
+  --color-gray-100: #f4f6f8;
+  --color-gray-200: #e2e8f0;
+  --color-gray-400: #94a3b8;
+  --color-text: #1a202c;
+  --color-text-secondary: #4a5568;
+
+  /* Fonts */
+  --font-heading: var(--font-montserrat);
+  --font-body: var(--font-inter);
+}
+
+/* ============================================================
+   Base Reset & Typography
+   ============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: var(--color-white);
+  color: var(--color-text);
+  font-family: var(--font-body), system-ui, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), system-ui, sans-serif;
+  line-height: 1.15;
+}
+
+/* ============================================================
+   Gold gradient text utility
+   ============================================================ */
+.gold-gradient-text {
+  background: linear-gradient(135deg, var(--color-gold-light) 0%, var(--color-gold) 60%, var(--color-gold-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============================================================
+   Section label — eyebrow text
+   ============================================================ */
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.section-label::before {
+  content: '';
+  display: block;
+  width: 2rem;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-gold), transparent);
+}
+
+/* ============================================================
+   Scrollbar
+   ============================================================ */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #111; }
+::-webkit-scrollbar-thumb { background: var(--color-gold-dark); border-radius: 3px; }
+
+/* ============================================================
+   Selection
+   ============================================================ */
+::selection {
+  background: var(--color-gold);
+  color: var(--color-dark);
+}
+
+/* ============================================================
+   WhatsApp Float Button
+   ============================================================ */
+.whatsapp-float {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 9999;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: #25d366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+}

@@ -1,0 +1,34 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:seotwix.com)",
+      "WebFetch(domain:concretemarketingcrew.com)",
+      "WebFetch(domain:webflow.com)",
+      "WebFetch(domain:floor-wiz.com)",
+      "WebFetch(domain:clickcallsell.com)",
+      "WebFetch(domain:epoxyfloorhero.com)",
+      "WebFetch(domain:americanepoxysystems.com)",
+      "WebFetch(domain:www.txepoxy.com)",
+      "WebFetch(domain:www.epoxyplus.com)",
+      "WebFetch(domain:www.waukeshaepoxy.com)",
+      "WebFetch(domain:arizonapaintingcompany.com)",
+      "WebFetch(domain:dribbble.com)",
+      "WebFetch(domain:www.jdomni.com)",
+      "WebFetch(domain:www.everlastepoxy.com)",
+      "WebFetch(domain:topepoxyflooring.com)",
+      "WebFetch(domain:rioepoxyflooring.com)",
+      "WebFetch(domain:www.epoxystrong.com)",
+      "WebFetch(domain:www.epotek.com.tr)",
+      "WebFetch(domain:comradeweb.com)",
+      "WebFetch(domain:www.cyberoptik.net)",
+      "WebFetch(domain:www.founderjar.com)",
+      "WebFetch(domain:www.cagrizemin.com)",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --no-git --yes)",
+      "Bash(rm README.MD)",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Bash(node -e \"const l = require\\(''lucide-react''\\); console.log\\(Object.keys\\(l\\).filter\\(k => k.toLowerCase\\(\\).includes\\(''share''\\) || k.toLowerCase\\(\\).includes\\(''social''\\) || k.toLowerCase\\(\\).includes\\(''link2''\\) || k.toLowerCase\\(\\).includes\\(''globe''\\)\\)\\)\")"
+    ]
+  }
+}
