@@ -24,7 +24,7 @@ export default function Footer() {
                 className="text-white font-black text-xl"
                 style={{ fontFamily: 'var(--font-heading)' }}
               >
-                Epoksi<span className="text-[var(--color-gold)]">Pro</span>
+                Epoksi<span className="text-[var(--color-gold)]">CLniz</span>
               </span>
             </div>
             <p className="text-[var(--color-gray-400)] text-sm leading-relaxed mb-6">
@@ -172,7 +172,7 @@ export default function Footer() {
       <div className="border-t border-white/8">
         <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-3">
           <p className="text-[var(--color-gray-400)] text-xs">
-            © {new Date().getFullYear()} EpoksiCLniz. Tüm hakları saklıdır.
+            © {new Date().getFullYear()} {SITE.name}. Tüm hakları saklıdır.
           </p>
           <div className="flex items-center gap-4">
             <Link

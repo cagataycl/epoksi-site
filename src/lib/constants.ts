@@ -43,13 +43,13 @@ export const BREAKPOINTS = {
 export const SITE = {
   name: 'EpoksiCLniz',
   tagline: 'Zeminlerinizi Sanat Eserine Dönüştürüyoruz',
-  phone: '+90 532 000 00 00',
-  whatsapp: '+905320000000',
-  email: 'info@epoksipro.com.tr',
+  phone: '+90 532 739 58 03',
+  whatsapp: '+905327395803',
+  email: 'info@epoksiclniz.com.tr',
   address: 'Atatürk Mah. Sanayi Cad. No:42, Büyükçekmece / İstanbul',
-  instagram: 'https://instagram.com/epoksipro',
-  facebook: 'https://facebook.com/epoksipro',
-  youtube: 'https://youtube.com/@epoksipro',
+  instagram: 'https://instagram.com/epoksiclniz',
+  facebook: 'https://facebook.com/epoksiclniz',
+  youtube: 'https://youtube.com/@epoksiclniz',
   mapEmbed:
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.4...', // replace with real embed
 } as const;

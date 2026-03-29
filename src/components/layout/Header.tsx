@@ -40,7 +40,7 @@ export default function Header() {
               className="text-white font-black text-xl tracking-tight group-hover:text-[var(--color-gold)] transition-colors duration-300"
               style={{ fontFamily: 'var(--font-heading)' }}
             >
-              Epoksi<span className="text-[var(--color-gold)]">Pro</span>
+              Epoksi<span className="text-[var(--color-gold)]">CLniz</span>
             </span>
           </Link>
 

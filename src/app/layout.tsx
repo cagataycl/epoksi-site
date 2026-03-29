@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   description:
     'İstanbul ve Türkiye genelinde profesyonel epoksi zemin kaplama hizmetleri. Metalik epoksi, 3D epoksi, endüstriyel kaplama ve garaj zemin çözümleri. 15+ yıl deneyim, 500+ tamamlanan proje.',
   keywords:
-    'epoksi zemin, epoksi kaplama, metalik epoksi, 3D epoksi zemin, endüstriyel zemin, garaj epoksi, zemin kaplama istanbul',
+    'EpoksiCLniz, epoksiclniz, epoksi zemin, epoksi kaplama, metalik epoksi, 3D epoksi zemin, endüstriyel zemin, garaj epoksi, zemin kaplama istanbul',
   openGraph: {
     title: `${SITE.name} | Profesyonel Epoksi Zemin Kaplama`,
     description:

@@ -234,7 +234,7 @@ export const TESTIMONIALS: Testimonial[] = [
     role: 'Interior Designer',
     company: 'Kaya Design Studio',
     content:
-      'Müşterilerime her zaman EpoksiCLniz\'yu öneriyorum. 3D ve metalik zemin projelerinde gösterdikleri ustalık inanılmaz. Son projemizde okyanus temalı 3D zemin yaptılar — misafirlerimiz gözlerine inanamadı!',
+      'Müşterilerime her zaman EpoksiCLniz\'i öneriyorum. 3D ve metalik zemin projelerinde gösterdikleri ustalık inanılmaz. Son projemizde okyanus temalı 3D zemin yaptılar — misafirlerimiz gözlerine inanamadı!',
     rating: 5,
   },
   {

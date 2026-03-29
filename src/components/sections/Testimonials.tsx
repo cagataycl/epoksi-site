@@ -113,7 +113,7 @@ export default function Testimonials() {
           </div>
           <div className="sm:ml-auto">
             <a
-              href="https://g.page/r/epoksipro"
+              href="https://g.page/r/epoksiclniz"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-gold)] hover:bg-[var(--color-gold-dark)] text-[var(--color-dark)] font-black text-xs tracking-widest uppercase rounded-sm transition-all duration-300"
