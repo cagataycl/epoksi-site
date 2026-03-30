@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Montserrat, Inter } from 'next/font/google';
+import { GoogleAnalytics } from '@next/third-parties/google';
 import './globals.css';
 import { SITE } from '@/lib/constants';
 
@@ -40,6 +41,7 @@ export default function RootLayout({
   return (
     <html lang="tr" className={`${montserrat.variable} ${inter.variable}`}>
       <body className="min-h-screen overflow-x-hidden">{children}</body>
+      <GoogleAnalytics gaId="G-YYTR3Z2FMR" />
     </html>
   );
 }
