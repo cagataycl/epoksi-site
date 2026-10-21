@@ -10,12 +10,7 @@ import type { GalleryCategory } from '@/types';
 
 const CATEGORIES: GalleryCategory[] = [
   'Tümü',
-  'Endüstriyel',
-  'Metalik',
-  '3D Epoksi',
-  'Ticari',
-  'Konut',
-  'Garaj',
+  ...new Set(GALLERY_ITEMS.map((item) => item.category)),
 ];
 
 export default function Gallery() {
@@ -34,9 +29,9 @@ export default function Gallery() {
       <div className="max-w-7xl mx-auto px-6">
         <SectionTitle
           label="Projelerimiz"
-          title="Gerçek"
+          title="Gerçek Dönüşümler"
           highlight="Dönüşümler"
-          subtitle="Her zemin kendi hikâyesini anlatır. Tamamladığımız projelerden seçmeler."
+          subtitle="Endüstriyel, ticari ve dekoratif zemin uygulamalarından örnekler."
           align="center"
           dark
         />
@@ -65,14 +60,16 @@ export default function Gallery() {
         >
           <AnimatePresence>
             {filtered.map((item, i) => (
-              <motion.div
+              <motion.button
+                type="button"
+                aria-label={`${item.title} fotoğrafını büyüt`}
                 key={item.id}
                 layout
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.35, delay: i * 0.05 }}
-                className="group relative aspect-[4/3] rounded-sm overflow-hidden cursor-pointer"
+                className="group relative aspect-[4/3] rounded-sm overflow-hidden cursor-pointer text-left"
                 onClick={() => setLightboxItem(item.id)}
               >
                 <Image
@@ -108,7 +105,7 @@ export default function Gallery() {
                     )}
                   </div>
                 </div>
-              </motion.div>
+              </motion.button>
             ))}
           </AnimatePresence>
         </motion.div>
@@ -142,13 +139,14 @@ export default function Gallery() {
               className="relative max-w-4xl w-full rounded-sm overflow-hidden shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="relative aspect-[16/9]">
+              <div className="relative h-[65vh] bg-black">
                 <Image
                   src={lightboxData.image}
                   alt={lightboxData.title}
                   fill
-                  className="object-cover"
-                  priority
+                  className="object-contain"
+                  sizes="(max-width: 896px) 100vw, 896px"
+                  preload
                 />
               </div>
               <div className="bg-[var(--color-dark-card)] p-5 flex items-start justify-between gap-4">
@@ -169,6 +167,7 @@ export default function Gallery() {
                   )}
                 </div>
                 <button
+                  aria-label="Fotoğrafı kapat"
                   onClick={() => setLightboxItem(null)}
                   className="flex-shrink-0 w-9 h-9 rounded-sm bg-white/8 hover:bg-[var(--color-gold)] hover:text-[var(--color-dark)] flex items-center justify-center text-white transition-all duration-300"
                 >
