@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Phone, Mail, MapPin } from 'lucide-react';
 import { SITE } from '@/lib/constants';
 import { NAV_LINKS, SERVICES } from '@/lib/data';
@@ -11,22 +12,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-2 mb-6">
-              <div className="w-9 h-9 rounded-sm bg-[var(--color-gold)] flex items-center justify-center">
-                <span
-                  className="text-[var(--color-dark)] font-black text-lg"
-                  style={{ fontFamily: 'var(--font-heading)' }}
-                >
-                  E
-                </span>
-              </div>
-              <span
-                className="text-white font-black text-xl"
-                style={{ fontFamily: 'var(--font-heading)' }}
-              >
-                Epoksi<span className="text-[var(--color-gold)]">CLniz</span>
-              </span>
-            </div>
+            <Link href="/" className="inline-block mb-6" aria-label="CL Zemin ana sayfa">
+              <Image
+                src="/images/cl-zemin-logo.jpg"
+                alt="CL Zemin – Epoksi Zemin Kaplama"
+                width={375}
+                height={375}
+                className="h-36 w-36 rounded-sm object-contain"
+              />
+            </Link>
             <p className="text-[var(--color-gray-400)] text-sm leading-relaxed mb-6">
               15+ yıllık deneyimimizle Türkiye&apos;nin önde gelen epoksi zemin
               kaplama şirketi. Her projede kalite, güven ve profesyonellik.

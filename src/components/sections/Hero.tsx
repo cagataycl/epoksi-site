@@ -1,26 +1,19 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import Image from 'next/image';
 import { ArrowRight, Phone, Play } from 'lucide-react';
 import { SITE } from '@/lib/constants';
 
 export default function Hero() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play().catch(() => {});
-    }
-  }, []);
-
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-[var(--color-dark)]">
-      {/* Background image (fallback / static) */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=85')`,
-        }}
+      <Image
+        src="/images/projects/atolye-epoksi-zemin.webp"
+        alt=""
+        fill
+        preload
+        sizes="100vw"
+        className="object-cover object-center"
       />
 
       {/* Multi-layer dark overlay for readability */}
@@ -31,8 +24,8 @@ export default function Hero() {
       <div className="absolute left-0 top-1/4 bottom-1/4 w-1 bg-gradient-to-b from-transparent via-[var(--color-gold)] to-transparent" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-24">
-        <div className="max-w-3xl">
+      <div className="relative z-10 max-w-7xl w-full mx-auto px-6 pt-36 pb-24 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_240px] gap-12 items-center">
+        <div className="max-w-3xl min-w-0">
           {/* Eyebrow */}
           <div className="flex items-center gap-3 mb-8">
             <div className="w-12 h-px bg-[var(--color-gold)]" />
@@ -46,7 +39,7 @@ export default function Hero() {
 
           {/* Headline */}
           <h1
-            className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.05] tracking-tight mb-8"
+            className="text-[clamp(1.625rem,8.5vw,3rem)] sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.05] tracking-tight mb-8"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
             Zemininizi{' '}
@@ -105,6 +98,15 @@ export default function Hero() {
               </div>
             ))}
           </div>
+        </div>
+        <div className="hidden lg:block rounded-sm bg-white p-3 shadow-2xl">
+          <Image
+            src="/images/cl-zemin-logo.jpg"
+            alt="CL Zemin – Epoksi Zemin Kaplama"
+            width={375}
+            height={375}
+            className="w-full h-auto"
+          />
         </div>
       </div>
 

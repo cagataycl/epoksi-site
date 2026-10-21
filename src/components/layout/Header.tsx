@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Phone, Menu, X, ChevronRight } from 'lucide-react';
 import { NAV_LINKS } from '@/lib/data';
 import { SITE } from '@/lib/constants';
@@ -27,21 +28,14 @@ export default function Header() {
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-9 h-9 rounded-sm bg-[var(--color-gold)] flex items-center justify-center shadow-[0_0_20px_rgba(200,169,81,0.5)]">
-              <span
-                className="text-[var(--color-dark)] font-black text-lg leading-none"
-                style={{ fontFamily: 'var(--font-heading)' }}
-              >
-                E
-              </span>
-            </div>
-            <span
-              className="text-white font-black text-xl tracking-tight group-hover:text-[var(--color-gold)] transition-colors duration-300"
-              style={{ fontFamily: 'var(--font-heading)' }}
-            >
-              Epoksi<span className="text-[var(--color-gold)]">CLniz</span>
-            </span>
+          <Link href="/" className="shrink-0" aria-label="CL Zemin ana sayfa">
+            <Image
+              src="/images/cl-zemin-logo.jpg"
+              alt="CL Zemin – Epoksi Zemin Kaplama"
+              width={375}
+              height={375}
+              className="h-16 w-16 rounded-sm object-contain md:h-20 md:w-20"
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -78,7 +72,9 @@ export default function Header() {
           <button
             className="lg:hidden text-white p-2"
             onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Menüyü aç"
+            aria-label={mobileOpen ? 'Menüyü kapat' : 'Menüyü aç'}
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-navigation"
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -87,6 +83,9 @@ export default function Header() {
 
       {/* Mobile Menu */}
       <div
+        id="mobile-navigation"
+        aria-hidden={!mobileOpen}
+        inert={!mobileOpen}
         className={`fixed inset-0 z-40 transition-all duration-500 lg:hidden ${
           mobileOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
@@ -102,7 +101,7 @@ export default function Header() {
             mobileOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
         >
-          <div className="pt-20 px-8 flex flex-col gap-2">
+          <div className="pt-28 px-8 flex flex-col gap-2">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
