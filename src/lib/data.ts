@@ -4,19 +4,43 @@ import type {
   ProcessStep,
   WhyUsItem,
   GalleryItem,
-  Testimonial,
   NavLink,
 } from '@/types';
 
 export const NAV_LINKS: NavLink[] = [
-  { label: 'Hizmetler', href: '#hizmetler' },
-  { label: 'Galeri', href: '#galeri' },
-  { label: 'Süreç', href: '#surec' },
-  { label: 'Hakkımızda', href: '#hakkimizda' },
-  { label: 'İletişim', href: '#iletisim' },
+  { label: 'Hizmetler', href: '/#hizmetler' },
+  { label: 'Galeri', href: '/#galeri' },
+  { label: 'Süreç', href: '/#surec' },
+  { label: 'Hakkımızda', href: '/hakkimizda' },
+  { label: 'İletişim', href: '/iletisim' },
 ];
 
 export const SERVICES: Service[] = [
+  {
+    id: 'akilli-sap', title: 'Akıllı Şap', icon: 'Layers',
+    description: 'Zemin yüzeyini düzleştirmek için uygulanan, kendiliğinden yayılan şap çözümleri.',
+    features: ['Zemin düzeltme', 'Kaplama öncesi hazırlık', 'İç mekân uygulamaları'], image: '/images/services/akilli-sap.jpg',
+  },
+  {
+    id: 'sap', title: 'Şap', icon: 'Layers',
+    description: 'Kaplama öncesinde zeminin hazırlanmasına yönelik şap uygulamaları.',
+    features: ['Zemin hazırlığı', 'Yüzey düzeltme', 'Projeye uygun uygulama'], image: '/images/services/sap.jpg',
+  },
+  {
+    id: 'baski-beton', title: 'Baskı Beton', icon: 'Building2',
+    description: 'Farklı desen ve dokularla dış mekânlar için dekoratif beton uygulamaları.',
+    features: ['Desen seçenekleri', 'Dış mekânlar', 'Dekoratif yüzeyler'], image: '',
+  },
+  {
+    id: 'tas-hali', title: 'Taş Halı', icon: 'Sparkles',
+    description: 'Doğal taş dokusunu zeminlerle buluşturan dekoratif kaplama uygulamaları.',
+    features: ['Doğal taş görünümü', 'Dekoratif yüzey', 'İç ve dış mekânlar'], image: '/images/services/tas-hali.png',
+  },
+  {
+    id: 'izolasyon', title: 'İzolasyon', icon: 'Shield',
+    description: 'Yüzeyin ihtiyacına göre planlanan izolasyon uygulamaları.',
+    features: ['Yüzey değerlendirmesi', 'İhtiyaca uygun çözüm', 'Uygulama desteği'], image: '',
+  },
   {
     id: 'endustriyel',
     title: 'Endüstriyel Epoksi',
@@ -109,7 +133,7 @@ export const PROCESS_STEPS: ProcessStep[] = [
     number: '05',
     title: 'Son Kat & Teslim',
     description:
-      'Koruyucu son kat uygulanır. Zemin kontrol edilir ve garantili olarak teslim edilir.',
+      'Koruyucu son kat uygulanır. Zemin kontrol edilir ve kullanıma hazır şekilde teslim edilir.',
   },
 ];
 
@@ -118,25 +142,19 @@ export const WHY_US: WhyUsItem[] = [
     icon: 'Award',
     title: 'Uzman Ekip',
     description:
-      '15 yılı aşkın deneyime sahip, sertifikalı uygulama uzmanlarından oluşan profesyonel ekibimiz.',
+      'Her projenin ihtiyaçlarına uygun zemin uygulamaları için çalışıyoruz.',
   },
   {
     icon: 'Star',
     title: 'Premium Malzeme',
     description:
-      'Yalnızca Avrupa ve Türkiye\'nin önde gelen markalarının A-kalite epoksi sistemlerini kullanıyoruz.',
+      'Uygulama ve yüzey ihtiyaçlarına uygun malzemeler tercih ediyoruz.',
   },
   {
     icon: 'Clock',
     title: 'Hızlı Teslim',
     description:
       'Projenizi en kısa sürede tamamlamak için planlı çalışma programı ve disiplinli ekip yapısı.',
-  },
-  {
-    icon: 'ShieldCheck',
-    title: '10 Yıl Garanti',
-    description:
-      'Tüm uygulamalarımıza yazılı 10 yıl garanti veriyoruz. Zemin kalitesinden yüzde yüz eminiz.',
   },
   {
     icon: 'Search',
@@ -146,7 +164,7 @@ export const WHY_US: WhyUsItem[] = [
   },
   {
     icon: 'HeadphonesIcon',
-    title: '7/24 Destek',
+    title: 'Uygulama Desteği',
     description:
       'Uygulama sonrası teknik destek ve bakım hizmetleri ile her zaman yanınızdayız.',
   },
@@ -222,44 +240,5 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     category: 'Endüstriyel',
     image: '/images/projects/turkuaz-epoksi-zemin.webp',
     description: 'Kolonlu üretim alanında parlak turkuaz kaplama.',
-  },
-];
-
-export const TESTIMONIALS: Testimonial[] = [
-  {
-    id: '1',
-    name: 'Ahmet Yılmaz',
-    role: 'Fabrika Sahibi',
-    company: 'Yılmaz Metal Sanayi',
-    content:
-      'Fabrikamızın 5.000 m² zemin alanını EpoksiCLniz ile kapladık. Hem süreç hem de sonuç tam beklediğimiz gibi oldu. Ekip zamanında geldi, işi zamanında bitirdi. Kaliteden hiç ödün verilmedi. Kesinlikle tavsiye ederim.',
-    rating: 5,
-  },
-  {
-    id: '2',
-    name: 'Selin Kaya',
-    role: 'Interior Designer',
-    company: 'Kaya Design Studio',
-    content:
-      'Müşterilerime her zaman EpoksiCLniz\'i öneriyorum. 3D ve metalik zemin projelerinde gösterdikleri ustalık inanılmaz. Son projemizde okyanus temalı 3D zemin yaptılar — misafirlerimiz gözlerine inanamadı!',
-    rating: 5,
-  },
-  {
-    id: '3',
-    name: 'Mehmet Demir',
-    role: 'Otel Genel Müdürü',
-    company: 'Grand Boutique Hotel',
-    content:
-      'Otelimizdeki lobby ve restoran alanlarını EpoksiCLniz ile yeniledik. Misafirlerimizden aldığımız geri bildirimler olağanüstü. İş kalitesi, temizlik ve profesyonellik açısından tam puan. Teşekkürler!',
-    rating: 5,
-  },
-  {
-    id: '4',
-    name: 'Zeynep Arslan',
-    role: 'Ev Sahibi',
-    company: 'Bireysel Müşteri',
-    content:
-      'Villamızın tüm zemin katını metalik epoksi ile kapladırdık. Fiyat/performans açısından çok memnunuz. Uygulama tek günde tamamlandı, 48 saat sonra üzerinde yürüdük. Harika bir deneyimdi.',
-    rating: 5,
   },
 ];

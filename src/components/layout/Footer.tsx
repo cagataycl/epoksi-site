@@ -12,7 +12,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="inline-block mb-6" aria-label="CL Zemin ana sayfa">
+            <Link href="/" className="inline-block mb-6" aria-label="Epoksiciniz ana sayfa">
               <Image
                 src="/images/cl-zemin-logo.jpg"
                 alt="CL Zemin – Epoksi Zemin Kaplama"
@@ -22,8 +22,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-[var(--color-gray-400)] text-sm leading-relaxed mb-6">
-              15+ yıllık deneyimimizle Türkiye&apos;nin önde gelen epoksi zemin
-              kaplama şirketi. Her projede kalite, güven ve profesyonellik.
+              Epoksi, şap ve dekoratif zemin uygulamalarında projenize uygun çözümler.
             </p>
             <div className="flex items-center gap-3">
               {[
@@ -81,7 +80,7 @@ export default function Footer() {
               {SERVICES.map((s) => (
                 <li key={s.id}>
                   <Link
-                    href="#hizmetler"
+                    href={`/hizmetler/${s.id}`}
                     className="text-[var(--color-gray-400)] hover:text-[var(--color-gold)] text-sm transition-colors duration-300 flex items-center gap-2"
                   >
                     <span className="w-1 h-1 rounded-full bg-[var(--color-gold)]" />
@@ -114,7 +113,7 @@ export default function Footer() {
               ))}
               <li>
                 <Link
-                  href="#iletisim"
+                  href="/iletisim"
                   className="text-[var(--color-orange)] hover:text-[var(--color-gold)] text-sm font-semibold transition-colors duration-300 flex items-center gap-2"
                 >
                   <span className="w-1 h-1 rounded-full bg-[var(--color-orange)]" />

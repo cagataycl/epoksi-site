@@ -1,7 +1,6 @@
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Hero from '@/components/sections/Hero';
-import Stats from '@/components/sections/Stats';
 import Services from '@/components/sections/Services';
 import WhyUs from '@/components/sections/WhyUs';
 import Process from '@/components/sections/Process';
@@ -17,7 +16,6 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <Stats />
         <Services />
         <WhyUs />
         <Process />
@@ -29,7 +27,7 @@ export default function Home() {
 
       {/* Floating WhatsApp Button */}
       <a
-        href={`https://wa.me/${SITE.whatsapp}?text=Merhaba%2C%20epoksi%20zemin%20kaplama%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.`}
+        href={`https://wa.me/${SITE.whatsapp.replace(/\D/g, '')}?text=Merhaba%2C%20epoksi%20zemin%20kaplama%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.`}
         target="_blank"
         rel="noopener noreferrer"
         className="whatsapp-float"

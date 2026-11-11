@@ -25,7 +25,7 @@ export default function SectionTitle({
   const subtitleColor = dark ? 'text-[var(--color-gray-400)]' : 'text-[var(--color-text-secondary)]';
 
   // Build the full title with highlight replacement
-  const parts = highlight ? title.split(highlight) : [title];
+  const parts = highlight ? (title.includes(highlight) ? title.split(highlight) : [title, '']) : [title];
 
   return (
     <div className={`flex flex-col ${alignClass} mb-14`}>

@@ -58,9 +58,7 @@ export default function Hero() {
             className="text-[var(--color-gray-400)] text-lg md:text-xl leading-relaxed mb-12 max-w-2xl"
             style={{ fontFamily: 'var(--font-body)' }}
           >
-            15 yılı aşkın deneyim ve 500&apos;den fazla tamamlanan projeyle
-            endüstriyel, ticari ve konut alanlarınız için premium epoksi zemin
-            çözümleri sunuyoruz.
+            Epoksi, şap ve dekoratif zemin uygulamalarıyla yaşam ve çalışma alanlarınız için çözümler sunuyoruz.
           </p>
 
           {/* CTAs */}
@@ -81,23 +79,6 @@ export default function Hero() {
             </a>
           </div>
 
-          {/* Trust badges */}
-          <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
-            {[
-              { value: '500+', label: 'Tamamlanan Proje' },
-              { value: '15+', label: 'Yıl Deneyim' },
-              { value: '10 Yıl', label: 'Yazılı Garanti' },
-            ].map((badge) => (
-              <div key={badge.label} className="flex items-center gap-2.5">
-                <div className="text-2xl font-black text-[var(--color-gold)]" style={{ fontFamily: 'var(--font-heading)' }}>
-                  {badge.value}
-                </div>
-                <div className="text-[var(--color-gray-400)] text-xs uppercase tracking-widest">
-                  {badge.label}
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
         <div className="hidden lg:block rounded-sm bg-white p-3 shadow-2xl">
           <Image

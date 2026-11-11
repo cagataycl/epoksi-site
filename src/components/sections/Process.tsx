@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { SITE } from '@/lib/constants';
 import SectionTitle from '@/components/ui/SectionTitle';
 import { PROCESS_STEPS } from '@/lib/data';
 
@@ -89,7 +90,7 @@ export default function Process() {
               Ücretsiz Keşif İste
             </a>
             <a
-              href={`tel:${'+90 532 000 00 00'}`}
+              href={`tel:${SITE.phone}`}
               className="px-8 py-3.5 border border-white/20 hover:border-[var(--color-gold)] text-white hover:text-[var(--color-gold)] font-bold text-xs tracking-widest uppercase rounded-sm transition-all duration-300 text-center"
             >
               Hemen Ara

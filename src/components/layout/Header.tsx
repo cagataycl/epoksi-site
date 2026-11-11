@@ -23,18 +23,18 @@ export default function Header() {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
             ? 'bg-[var(--color-dark)]/95 backdrop-blur-md shadow-[0_2px_24px_rgba(0,0,0,0.6)] py-3'
-            : 'bg-transparent py-5'
+            : 'bg-[var(--color-dark)]/95 py-5'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="shrink-0" aria-label="CL Zemin ana sayfa">
+          <Link href="/" className="shrink-0" aria-label="Epoksiciniz ana sayfa">
             <Image
               src="/images/cl-zemin-logo.jpg"
               alt="CL Zemin – Epoksi Zemin Kaplama"
               width={375}
               height={375}
-              className="h-16 w-16 rounded-sm object-contain md:h-20 md:w-20"
+              className="h-16 w-16 rounded-sm bg-white object-contain md:h-20 md:w-20"
             />
           </Link>
 
@@ -61,7 +61,7 @@ export default function Header() {
               <span className="text-sm font-semibold">{SITE.phone}</span>
             </a>
             <Link
-              href="#iletisim"
+              href="/iletisim"
               className="px-6 py-2.5 bg-[var(--color-gold)] hover:bg-[var(--color-gold-dark)] text-[var(--color-dark)] text-xs font-black tracking-widest uppercase rounded-sm transition-all duration-300 shadow-[0_4px_16px_rgba(200,169,81,0.35)] hover:shadow-[0_6px_24px_rgba(200,169,81,0.5)]"
             >
               Teklif Al
@@ -121,7 +121,7 @@ export default function Header() {
                 <Phone size={15} /> {SITE.phone}
               </a>
               <Link
-                href="#iletisim"
+                href="/iletisim"
                 onClick={() => setMobileOpen(false)}
                 className="flex items-center justify-center py-3.5 bg-[var(--color-gold)] text-[var(--color-dark)] rounded-sm text-sm font-black tracking-widest uppercase"
               >

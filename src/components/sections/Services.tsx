@@ -10,6 +10,7 @@ import {
   Shield,
   ArrowRight,
 } from 'lucide-react';
+import Link from 'next/link';
 import SectionTitle from '@/components/ui/SectionTitle';
 import { SERVICES } from '@/lib/data';
 
@@ -29,8 +30,8 @@ export default function Services() {
         <SectionTitle
           label="Hizmetlerimiz"
           title="Her Zemin İçin"
-          highlight="Mükemmel"
-          subtitle="Endüstriyel tesislerden lüks konutlara, ticari mekânlardan garajlara — her türlü zemin için özelleştirilmiş epoksi çözümlerimiz mevcuttur."
+          highlight="Çözümler"
+          subtitle="Epoksi, şap, dekoratif zemin ve izolasyon uygulamalarını keşfedin."
           align="center"
         />
 
@@ -86,13 +87,13 @@ export default function Services() {
                   </ul>
 
                   {/* CTA */}
-                  <a
-                    href="#iletisim"
+                  <Link
+                    href={`/hizmetler/${service.id}`}
                     className="inline-flex items-center gap-1.5 text-[var(--color-gold)] text-xs font-bold tracking-widest uppercase hover:gap-3 transition-all duration-300"
                   >
-                    Teklif Al
+                    Detayları Gör
                     <ArrowRight size={13} strokeWidth={2.5} />
-                  </a>
+                  </Link>
                 </div>
               </motion.div>
             );
