@@ -21,13 +21,13 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: `${SITE.name} | Profesyonel Epoksi Zemin Kaplama`,
   description:
-    'İstanbul ve Türkiye genelinde profesyonel epoksi zemin kaplama hizmetleri. Metalik epoksi, 3D epoksi, endüstriyel kaplama ve garaj zemin çözümleri. 15+ yıl deneyim, 500+ tamamlanan proje.',
+    'Epoksiciniz: epoksi zemin, akıllı şap, şap, baskı beton, taş halı ve izolasyon uygulamaları.',
   keywords:
-    'EpoksiCLniz, epoksiclniz, epoksi zemin, epoksi kaplama, metalik epoksi, 3D epoksi zemin, endüstriyel zemin, garaj epoksi, zemin kaplama istanbul',
+    'Epoksiciniz, epoksi zemin, epoksi kaplama, metalik epoksi, 3D epoksi zemin, endüstriyel zemin, garaj epoksi, zemin kaplama istanbul',
   openGraph: {
     title: `${SITE.name} | Profesyonel Epoksi Zemin Kaplama`,
     description:
-      'Zeminlerinizi sanat eserine dönüştürüyoruz. 15+ yıl deneyim, 500+ proje, 10 yıl garanti.',
+      'Epoksi ve zemin uygulamalarında projenize uygun çözümler.',
     type: 'website',
     locale: 'tr_TR',
   },

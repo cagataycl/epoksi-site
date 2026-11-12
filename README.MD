@@ -34,3 +34,9 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Google yorumları
+
+Ana sayfa, Places API (New) üzerinden Epoksiciniz işletmesinin en fazla beş yorumunu gösterir. Google Cloud projesinde faturalandırma ve Places API (New) etkin olmalıdır. Sunucu ortamına `GOOGLE_PLACES_API_KEY` değişkenini ekleyin; anahtarı kaynak koduna veya Git'e eklemeyin. Google Maps Place ID uygulamada belirtilmiştir. Anahtar bulunamazsa veya API yanıt vermezse ziyaretçiler yorumları Google Haritalar'da görebilir.
+
+Her sayfa görüntülemesinde canlı Places isteği yapılır ve istekler ücretli kotayı kullanabilir. Yayına almadan önce Google Cloud'da uygun API kota sınırları ve faturalandırma uyarıları belirleyin. API anahtarını Places API (New) ile sınırlandırın ve sunucu IP adresleri sabitse IP kısıtlaması uygulayın.

@@ -26,10 +26,10 @@ export default function WhyUs() {
     <section id="hakkimizda" className="py-28 bg-[var(--color-dark-2)]">
       <div className="max-w-7xl mx-auto px-6">
         <SectionTitle
-          label="Neden EpoksiCLniz?"
+          label="Neden Epoksiciniz?"
           title="Farkımızı"
           highlight="Hissedeceksiniz"
-          subtitle="Her projede aynı özen, aynı kalite. İşte bizi tercih etmeniz için 6 güçlü neden."
+          subtitle="Her projede aynı özen, aynı kalite. Projeniz için ihtiyaçlarınıza uygun çözümler."
           align="center"
           dark
         />
