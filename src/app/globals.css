@@ -218,3 +218,23 @@ button { cursor: pointer; }
  html { scroll-behavior: auto; }
  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
+
+/* Richer, architectural visual treatment inspired by the original design. */
+.service-grid { gap: 16px; }
+.service-card { position: relative; min-height: 155px; padding: 26px 22px; border-color: #e0e2e4; box-shadow: 0 8px 28px #1823310c; }
+.service-card::before { content: ''; position: absolute; inset: 0 auto auto 0; width: 56px; height: 3px; background: linear-gradient(90deg, #a88b35, #e8c96a); border-radius: 8px 0 0 0; }
+.service-card > svg:first-child { box-sizing: content-box; padding: 12px; margin-top: 0; background: var(--color-dark-2); color: var(--color-gold-light); border-radius: 7px; }
+.service-card h3 { font-size: 16px; font-weight: 750; }
+.service-card p { font-size: 13px; }
+.service-card:hover { transform: translateY(-3px); box-shadow: 0 16px 32px #18233118; }
+.about-strip { background: linear-gradient(110deg, #111827, #263746); padding-block: 65px; }
+.about-strip h2 { font-size: clamp(29px, 3.4vw, 40px); font-weight: 750; }
+.section-title h2 { font-weight: 750; }
+#galeri { background: #0a0b0e; }
+#galeri .group { box-shadow: 0 8px 30px #0004; }
+.review-card { box-shadow: 0 8px 28px #1823310c; }
+@media (max-width: 639px) {
+ .service-card { min-height: 0; padding: 18px; }
+ .service-card > svg:first-child { padding: 10px; }
+ .about-strip { padding-block: 48px; }
+}

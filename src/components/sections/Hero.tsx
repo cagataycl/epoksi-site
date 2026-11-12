@@ -1,27 +1,119 @@
+'use client';
+
 import Image from 'next/image';
-import { ArrowUpRight, Phone } from 'lucide-react';
+import { ArrowRight, Phone, Play } from 'lucide-react';
 import { SITE } from '@/lib/constants';
 
 export default function Hero() {
   return (
-    <section className="hero-section">
-      <div className="site-container hero-grid">
-        <div className="hero-copy">
-          <p className="section-label">Epoksi & zemin uygulamaları</p>
-          <h1>Mekânınıza yakışan,<br />işinize uygun zeminler.</h1>
-          <p className="hero-description">Endüstriyel alanlardan yaşam alanlarına; epoksi, şap ve dekoratif zemin çözümlerini projenize göre uyguluyoruz.</p>
-          <div className="hero-actions">
-            <a href="#iletisim" className="button-primary">Projeniz için teklif alın <ArrowUpRight size={18} /></a>
-            <a href="#galeri" className="button-secondary">Uygulamaları inceleyin</a>
+    <section className="relative min-h-[760px] lg:min-h-[82vh] flex items-center overflow-hidden bg-[var(--color-dark)]">
+      <Image
+        src="/images/projects/atolye-epoksi-zemin.webp"
+        alt=""
+        fill
+        preload
+        sizes="100vw"
+        className="object-cover object-center"
+      />
+
+      {/* Multi-layer dark overlay for readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-dark)]/98 via-[var(--color-dark)]/80 to-[var(--color-dark)]/40" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-dark)] via-transparent to-transparent" />
+
+      {/* Gold accent bar — left edge */}
+      <div className="absolute left-0 top-1/4 bottom-1/4 w-1 bg-gradient-to-b from-transparent via-[var(--color-gold)] to-transparent" />
+
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl w-full mx-auto px-6 pt-28 pb-24 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_240px] gap-12 items-center">
+        <div className="max-w-3xl min-w-0">
+          {/* Eyebrow */}
+          <div className="flex items-center gap-3 mb-8">
+            <div className="w-12 h-px bg-[var(--color-gold)]" />
+            <span
+              className="text-[var(--color-gold)] text-xs font-bold tracking-[0.25em] uppercase"
+              style={{ fontFamily: 'var(--font-heading)' }}
+            >
+              Profesyonel Epoksi Zemin Kaplama
+            </span>
           </div>
-          <a href={`tel:${SITE.phone}`} className="hero-phone"><Phone size={16} /><span>Birlikte planlayalım <strong>{SITE.phone}</strong></span></a>
+
+          {/* Headline */}
+          <h1
+            className="text-[clamp(1.625rem,8.5vw,3rem)] sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.05] tracking-tight mb-8"
+            style={{ fontFamily: 'var(--font-heading)' }}
+          >
+            Zemininizi{' '}
+            <span className="relative inline-block">
+              <span className="gold-gradient-text">Sanat Eserine</span>
+              <span
+                className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-to-r from-[var(--color-gold)] via-[var(--color-gold-light)] to-transparent"
+              />
+            </span>
+            <br />
+            Dönüştürüyoruz
+          </h1>
+
+          {/* Subtitle */}
+          <p
+            className="text-[var(--color-gray-400)] text-lg md:text-xl leading-relaxed mb-12 max-w-2xl"
+            style={{ fontFamily: 'var(--font-body)' }}
+          >
+            Epoksi, şap ve dekoratif zemin uygulamalarıyla yaşam ve çalışma alanlarınız için çözümler sunuyoruz.
+          </p>
+
+          {/* CTAs */}
+          <div className="flex flex-col sm:flex-row gap-4 mb-8">
+            <a
+              href="#iletisim"
+              className="inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-[var(--color-gold)] hover:bg-[var(--color-gold-dark)] text-[var(--color-dark)] font-black text-sm tracking-widest uppercase rounded-sm transition-all duration-300 shadow-[0_8px_32px_rgba(200,169,81,0.4)] hover:shadow-[0_12px_40px_rgba(200,169,81,0.55)] hover:-translate-y-0.5"
+            >
+              Ücretsiz Teklif Al
+              <ArrowRight size={16} strokeWidth={2.5} />
+            </a>
+            <a
+              href="#galeri"
+              className="inline-flex items-center justify-center gap-2.5 px-8 py-4 border border-white/25 hover:border-[var(--color-gold)] text-white hover:text-[var(--color-gold)] font-bold text-sm tracking-widest uppercase rounded-sm transition-all duration-300 backdrop-blur-sm"
+            >
+              <Play size={14} strokeWidth={2.5} className="fill-current" />
+              Projelerimizi Gör
+            </a>
+          </div>
+
         </div>
-        <figure className="hero-photo">
-          <Image src="/images/projects/atolye-epoksi-zemin.webp" alt="Epoksiciniz tarafından uygulanan parlak gri atölye zemini" fill preload sizes="(min-width: 1024px) 52vw, 100vw" className="object-cover" />
-          <figcaption><span>Uygulamalarımızdan</span><strong>Atölye epoksi zemini</strong><a href="#galeri" aria-label="Tüm uygulama fotoğraflarını gör"><ArrowUpRight size={22} /></a></figcaption>
-        </figure>
+        <div className="hidden lg:block rounded-sm bg-white p-3 shadow-2xl">
+          <Image
+            src="/images/cl-zemin-logo.jpg"
+            alt="CL Zemin – Epoksi Zemin Kaplama"
+            width={375}
+            height={375}
+            className="w-full h-auto"
+          />
+        </div>
       </div>
-      <div className="hero-footnote site-container"><span>Endüstriyel & ticari alanlar</span><span>Dekoratif yüzeyler</span><span>Zemin hazırlığı & izolasyon</span></div>
+
+      {/* Phone CTA — bottom right */}
+      <a
+        href={`tel:${SITE.phone}`}
+        className="absolute bottom-10 right-8 hidden lg:flex items-center gap-3 group"
+      >
+        <div className="text-right">
+          <div className="text-[var(--color-gray-400)] text-xs uppercase tracking-widest mb-0.5">
+            Hemen Arayın
+          </div>
+          <div className="text-white group-hover:text-[var(--color-gold)] font-bold text-sm transition-colors duration-300">
+            {SITE.phone}
+          </div>
+        </div>
+        <div className="w-10 h-10 rounded-full border border-[var(--color-gold)]/40 group-hover:border-[var(--color-gold)] flex items-center justify-center transition-all duration-300 group-hover:bg-[var(--color-gold)]/10">
+          <Phone size={16} className="text-[var(--color-gold)]" />
+        </div>
+      </a>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
+        <div className="text-white text-xs tracking-widest uppercase">Kaydır</div>
+        <div className="w-px h-12 bg-gradient-to-b from-white to-transparent animate-pulse" />
+      </div>
     </section>
   );
 }
