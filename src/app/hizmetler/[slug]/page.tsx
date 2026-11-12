@@ -17,7 +17,7 @@ export default async function ServicePage({ params }: Props) {
   const { slug } = await params;
   const service = SERVICES.find((item) => item.id === slug);
   if (!service) notFound();
-  const hasImage = ['akilli-sap', 'sap', 'tas-hali'].includes(service.id);
+  const hasImage = ['akilli-sap', 'sap', 'tas-hali', 'epoksi', 'beton-silim', 'otopark-cizgi', 'baski-beton'].includes(service.id);
   return <><Header /><main className="bg-[var(--color-gray-100)] min-h-[70vh] pt-28 pb-16"><div className="max-w-7xl mx-auto px-6">
     <Link href="/#hizmetler" className="text-sm font-bold text-[var(--color-text-secondary)] hover:text-[var(--color-gold)]">← Tüm hizmetler</Link>
     <div className="grid lg:grid-cols-2 gap-8 items-center mt-10">
@@ -26,7 +26,7 @@ export default async function ServicePage({ params }: Props) {
         <p className="mt-8 text-[var(--color-text-secondary)] leading-relaxed">Uygulama detayları ve projenize uygun seçenekler hakkında bilgi almak için bizimle iletişime geçin.</p>
         <Link href="/iletisim" className="inline-flex mt-8 px-7 py-4 bg-[var(--color-gold)] text-[var(--color-dark)] font-bold rounded-sm">İletişime geçin</Link>
       </div>
-      {hasImage && <div className="relative aspect-[4/3] overflow-hidden rounded-lg"><Image src={service.image} alt={`${service.title} uygulaması`} fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" /></div>}
+      {hasImage && <div className="relative aspect-[4/3] overflow-hidden rounded-lg"><Image src={service.image} alt={`${service.title} uygulaması`} fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />{service.id === 'baski-beton' && <span className="absolute bottom-3 right-3 rounded bg-black/75 px-3 py-1 text-xs text-white">Temsili görsel</span>}</div>}
     </div>
   </div></main><Footer /></>;
 }

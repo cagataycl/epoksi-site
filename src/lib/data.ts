@@ -17,6 +17,21 @@ export const NAV_LINKS: NavLink[] = [
 
 export const SERVICES: Service[] = [
   {
+    id: 'epoksi', title: 'Epoksi Zemin Kaplama', icon: 'Layers',
+    description: 'Endüstriyel ve ticari alanlardan yaşam alanlarına, zeminin kullanımına uygun epoksi kaplama uygulamaları.',
+    features: ['Zemin hazırlığı', 'Projeye uygun kaplama', 'Farklı renk seçenekleri'], image: '/images/services/epoksi.jpg',
+  },
+  {
+    id: 'beton-silim', title: 'Beton Silim ve Parlatma', icon: 'Sparkles',
+    description: 'Beton yüzeylerin silinmesi ve ihtiyaca göre parlatılmasına yönelik uygulamalar.',
+    features: ['Yüzey değerlendirmesi', 'Beton silimi', 'Parlatma uygulaması'], image: '/images/services/beton-silim.jpg',
+  },
+  {
+    id: 'otopark-cizgi', title: 'Otopark Çizgi Boyaları', icon: 'Car',
+    description: 'Otopark ve kullanım alanları için çizgi, yönlendirme ve zemin işaretleme uygulamaları.',
+    features: ['Park alanı çizgileri', 'Yönlendirme işaretleri', 'Projeye uygun planlama'], image: '/images/services/otopark-cizgi.jpg',
+  },
+  {
     id: 'akilli-sap', title: 'Akıllı Şap', icon: 'Layers',
     description: 'Zemin yüzeyini düzleştirmek için uygulanan, kendiliğinden yayılan şap çözümleri.',
     features: ['Zemin düzeltme', 'Kaplama öncesi hazırlık', 'İç mekân uygulamaları'], image: '/images/services/akilli-sap.jpg',
@@ -29,7 +44,7 @@ export const SERVICES: Service[] = [
   {
     id: 'baski-beton', title: 'Baskı Beton', icon: 'Building2',
     description: 'Farklı desen ve dokularla dış mekânlar için dekoratif beton uygulamaları.',
-    features: ['Desen seçenekleri', 'Dış mekânlar', 'Dekoratif yüzeyler'], image: '',
+    features: ['Desen seçenekleri', 'Dış mekânlar', 'Dekoratif yüzeyler'], image: '/images/services/baski-beton-ai.png',
   },
   {
     id: 'tas-hali', title: 'Taş Halı', icon: 'Sparkles',
