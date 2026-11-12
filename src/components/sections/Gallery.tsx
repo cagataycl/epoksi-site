@@ -45,9 +45,9 @@ export default function Gallery() {
     <section id="galeri" className="section-space bg-[var(--color-dark)]">
       <div className="site-container">
         <SectionTitle
-          label="Epoksi uygulamalarımız"
-          title="Epoksi zemin çalışmalarımız"
-          subtitle="Endüstriyel, ticari ve dekoratif epoksi zemin uygulamalarımızdan örnekler."
+          label="Projelerimiz"
+          title="Uygulamalarımıza yakından bakın"
+          subtitle="Endüstriyel, ticari ve dekoratif zemin uygulamalarından örnekler."
           align="left"
           dark
         />

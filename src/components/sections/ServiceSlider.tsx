@@ -6,7 +6,6 @@ import Link from 'next/link';
 import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react';
 import { SERVICES } from '@/lib/data';
 
-const editedImages: Record<string, string> = { sap: '/images/services/sap-duzenlenmis.png', 'akilli-sap': '/images/services/akilli-sap-duzenlenmis.png' };
 const featured = ['sap', 'akilli-sap', 'epoksi', 'tas-hali', 'baski-beton', 'beton-silim', 'otopark-cizgi'];
 
 export default function ServiceSlider() {
@@ -23,10 +22,9 @@ export default function ServiceSlider() {
       {featured.map(id => {
         const service = SERVICES.find(item => item.id === id)!;
         return <Link href={`/hizmetler/${id}`} key={id} className="featured-service">
-          <Image src={editedImages[id] ?? service.image} alt="" fill sizes="(max-width: 639px) 82vw, (max-width: 1023px) 45vw, 29vw" className="object-cover" />
+          <Image src={service.image} alt="" fill sizes="(max-width: 639px) 82vw, (max-width: 1023px) 45vw, 29vw" className="object-cover" />
           <span className="featured-shade" />
           {id === 'baski-beton' && <span className="featured-disclaimer">Temsili görsel</span>}
-          {editedImages[id] && <span className="featured-disclaimer">Görsel düzenlenmiştir</span>}
           <span className="featured-copy"><strong>{service.title}</strong><span>Hizmeti inceleyin <ArrowUpRight size={16} /></span></span>
         </Link>;
       })}

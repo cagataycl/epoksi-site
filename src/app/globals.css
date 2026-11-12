@@ -249,10 +249,10 @@ button { cursor: pointer; }
 .featured-track { display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 32px) / 3); gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 10px; }
 .featured-track::-webkit-scrollbar { height: 5px; }
 .featured-track::-webkit-scrollbar-track { background: #e0e5e8; }
-.featured-service { position: relative; display: block; overflow: hidden; height: 280px; border-radius: 8px; scroll-snap-align: start; background: #202a34; color: white; box-shadow: 0 10px 25px rgba(17,24,39,.17); }
+.featured-service { position: relative; display: block; overflow: hidden; height: 280px; border-radius: 8px; scroll-snap-align: start; background: #202a34; color: white; }
 .featured-service img { transition: transform .35s; }
 .featured-service:hover img { transform: scale(1.04); }
-.featured-shade { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(10,15,20,.94) 0%, rgba(10,15,20,.32) 60%, rgba(10,15,20,.22) 100%); }
+.featured-shade { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(10,15,20,.92), transparent 72%); }
 .featured-copy { position: absolute; inset: auto 22px 22px; display: flex; flex-direction: column; gap: 9px; }
 .featured-copy strong { font: 700 20px/1.2 var(--font-heading), sans-serif; }
 .featured-copy > span { display: flex; align-items: center; gap: 5px; font-size: 12px; color: #e8c96a; }
