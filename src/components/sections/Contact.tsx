@@ -4,8 +4,8 @@ import { SITE } from '@/lib/constants';
 
 export default function Contact() {
   return (
-    <section id="iletisim" className="py-28 bg-[var(--color-dark-2)]">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="iletisim" className="section-space bg-[var(--color-dark-2)]">
+      <div className="site-container">
         <SectionTitle label="İletişim" title="Projenizi Konuşalım" highlight="Konuşalım" subtitle="Projeniz ve zemin ihtiyaçlarınız için bizimle iletişime geçin." dark />
         <div className="grid md:grid-cols-3 gap-5 max-w-5xl mx-auto">
           <a href={`tel:${SITE.phone}`} className="p-7 bg-white/5 rounded-lg text-white hover:bg-white/10"><Phone className="text-[var(--color-gold)] mb-4" /><span className="block text-sm text-[var(--color-gray-400)] mb-2">Telefon</span><span className="font-bold">{SITE.phone}</span></a>

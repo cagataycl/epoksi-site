@@ -1,8 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { ZoomIn, X } from 'lucide-react';
 import SectionTitle from '@/components/ui/SectionTitle';
 import { GALLERY_ITEMS } from '@/lib/data';
@@ -14,6 +14,10 @@ const CATEGORIES: GalleryCategory[] = [
 ];
 
 export default function Gallery() {
+  const reducedMotion = useReducedMotion();
+  const [showAll, setShowAll] = useState(false);
+  const closeRef = useRef<HTMLButtonElement>(null);
+  const openerRef = useRef<HTMLButtonElement | null>(null);
   const [activeCategory, setActiveCategory] = useState<GalleryCategory>('Tümü');
   const [lightboxItem, setLightboxItem] = useState<string | null>(null);
 
@@ -22,29 +26,42 @@ export default function Gallery() {
       ? GALLERY_ITEMS
       : GALLERY_ITEMS.filter((item) => item.category === activeCategory);
 
+  useEffect(() => {
+    if (!lightboxItem) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    closeRef.current?.focus();
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setLightboxItem(null);
+      if (event.key === 'Tab') { event.preventDefault(); closeRef.current?.focus(); }
+    };
+    document.addEventListener('keydown', onKey);
+    return () => { document.body.style.overflow = previous; document.removeEventListener('keydown', onKey); openerRef.current?.focus(); };
+  }, [lightboxItem]);
+
   const lightboxData = GALLERY_ITEMS.find((i) => i.id === lightboxItem);
 
   return (
-    <section id="galeri" className="py-28 bg-[var(--color-dark)]">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="galeri" className="section-space bg-[var(--color-dark)]">
+      <div className="site-container">
         <SectionTitle
           label="Projelerimiz"
-          title="Gerçek Dönüşümler"
-          highlight="Dönüşümler"
+          title="Uygulamalarımıza yakından bakın"
           subtitle="Endüstriyel, ticari ve dekoratif zemin uygulamalarından örnekler."
-          align="center"
+          align="left"
           dark
         />
 
         {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-2 mb-12">
+        <div className="flex flex-wrap gap-2 mb-6">
           {CATEGORIES.map((cat) => (
             <button
               key={cat}
-              onClick={() => setActiveCategory(cat)}
-              className={`px-5 py-2 text-xs font-bold tracking-widest uppercase rounded-sm transition-all duration-300 cursor-pointer ${
+              aria-pressed={activeCategory === cat}
+              onClick={() => { setActiveCategory(cat); setShowAll(false); }}
+              className={`px-5 py-2 text-sm font-medium rounded-sm transition-all duration-300 cursor-pointer ${
                 activeCategory === cat
-                  ? 'bg-[var(--color-gold)] text-[var(--color-dark)] shadow-[0_4px_16px_rgba(200,169,81,0.35)]'
+                  ? 'bg-[var(--color-gold)] text-[var(--color-dark)] '
                   : 'bg-white/6 text-[var(--color-gray-400)] hover:bg-white/10 hover:text-white border border-white/10'
               }`}
             >
@@ -56,10 +73,10 @@ export default function Gallery() {
         {/* Grid */}
         <motion.div
           layout
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+          className="grid grid-cols-2 lg:grid-cols-3 gap-3"
         >
           <AnimatePresence>
-            {filtered.map((item, i) => (
+            {(showAll ? filtered : filtered.slice(0, 6)).map((item) => (
               <motion.button
                 type="button"
                 aria-label={`${item.title} fotoğrafını büyüt`}
@@ -68,28 +85,28 @@ export default function Gallery() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.35, delay: i * 0.05 }}
-                className="group relative aspect-[4/3] rounded-sm overflow-hidden cursor-pointer text-left"
-                onClick={() => setLightboxItem(item.id)}
+                transition={{ duration: reducedMotion ? 0 : 0.25, delay: 0 }}
+                className="group relative aspect-[4/3] rounded-lg overflow-hidden cursor-pointer text-left"
+                onClick={(event) => { openerRef.current = event.currentTarget; setLightboxItem(item.id); }}
               >
                 <Image
                   src={item.image}
                   alt={item.title}
                   fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  sizes="(max-width: 1024px) 50vw, 33vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-dark)]/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-dark)]/90 via-transparent to-transparent opacity-100 transition-opacity duration-400" />
                 {/* Content */}
-                <div className="absolute inset-0 p-5 flex flex-col justify-between opacity-0 group-hover:opacity-100 transition-opacity duration-400">
+                <div className="absolute inset-0 p-5 flex flex-col justify-between opacity-100 transition-opacity duration-400">
                   <div className="flex justify-end">
                     <div className="w-9 h-9 rounded-full bg-[var(--color-gold)]/20 backdrop-blur-sm flex items-center justify-center border border-[var(--color-gold)]/40">
                       <ZoomIn size={16} className="text-[var(--color-gold)]" />
                     </div>
                   </div>
                   <div>
-                    <div className="text-[var(--color-gold)] text-xs font-bold tracking-widest uppercase mb-1">
+                    <div className="text-[var(--color-gold)] text-sm font-medium mb-1">
                       {item.category}
                     </div>
                     <h4
@@ -110,15 +127,7 @@ export default function Gallery() {
           </AnimatePresence>
         </motion.div>
 
-        {/* CTA */}
-        <div className="text-center mt-12">
-          <a
-            href="#iletisim"
-            className="inline-flex items-center gap-2 px-8 py-4 border border-[var(--color-gold)]/40 hover:border-[var(--color-gold)] text-[var(--color-gold)] hover:bg-[var(--color-gold)] hover:text-[var(--color-dark)] font-black text-xs tracking-widest uppercase rounded-sm transition-all duration-300"
-          >
-            Projeniz İçin Teklif Alın
-          </a>
-        </div>
+        {filtered.length > 6 && <div className="mt-6 text-center"><button type="button" className="button-secondary" aria-expanded={showAll} onClick={() => setShowAll(!showAll)}>{showAll ? 'Daha az göster' : `Tüm uygulamaları gör (${filtered.length})`}</button></div>}
       </div>
 
       {/* Lightbox */}
@@ -128,7 +137,8 @@ export default function Gallery() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8"
+            role="dialog" aria-modal="true" aria-label="Uygulama fotoğrafı"
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8"
             onClick={() => setLightboxItem(null)}
           >
             <div className="absolute inset-0 bg-black/90 backdrop-blur-sm" />
@@ -151,7 +161,7 @@ export default function Gallery() {
               </div>
               <div className="bg-[var(--color-dark-card)] p-5 flex items-start justify-between gap-4">
                 <div>
-                  <span className="text-[var(--color-gold)] text-xs font-bold tracking-widest uppercase">
+                  <span className="text-[var(--color-gold)] text-sm font-medium">
                     {lightboxData.category}
                   </span>
                   <h3
@@ -167,6 +177,7 @@ export default function Gallery() {
                   )}
                 </div>
                 <button
+                  ref={closeRef}
                   aria-label="Fotoğrafı kapat"
                   onClick={() => setLightboxItem(null)}
                   className="flex-shrink-0 w-9 h-9 rounded-sm bg-white/8 hover:bg-[var(--color-gold)] hover:text-[var(--color-dark)] flex items-center justify-center text-white transition-all duration-300"

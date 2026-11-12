@@ -22,29 +22,30 @@ export default function Header() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? 'bg-[var(--color-dark)]/95 backdrop-blur-md shadow-[0_2px_24px_rgba(0,0,0,0.6)] py-3'
-            : 'bg-[var(--color-dark)]/95 py-5'
+            ? 'bg-[var(--color-dark)]/95 backdrop-blur-md border-b border-white/10 py-2'
+            : 'bg-[var(--color-dark)] py-2'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+        <div className="site-container flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="shrink-0" aria-label="Epoksiciniz ana sayfa">
+          <Link href="/" className="shrink-0 flex items-center gap-3" aria-label="Epoksiciniz ana sayfa">
             <Image
               src="/images/cl-zemin-logo.jpg"
               alt="CL Zemin – Epoksi Zemin Kaplama"
               width={375}
               height={375}
-              className="h-16 w-16 rounded-sm bg-white object-contain md:h-20 md:w-20"
+              className="h-12 w-12 rounded-md bg-white object-contain"
             />
+            <span className="brand-name">Epoksiciniz<span>Zemin uygulamaları</span></span>
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-5">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-[var(--color-gray-400)] hover:text-[var(--color-gold)] text-sm font-semibold tracking-widest uppercase transition-colors duration-300"
+                className="text-[var(--color-gray-400)] hover:text-[var(--color-gold)] text-[13px] font-medium transition-colors duration-300"
               >
                 {link.label}
               </Link>
@@ -52,7 +53,7 @@ export default function Header() {
           </nav>
 
           {/* Desktop Actions */}
-          <div className="hidden lg:flex items-center gap-4">
+          <div className="hidden xl:flex items-center gap-4">
             <a
               href={`tel:${SITE.phone}`}
               className="flex items-center gap-2 text-[var(--color-gray-400)] hover:text-[var(--color-gold)] transition-colors duration-300"
@@ -62,7 +63,7 @@ export default function Header() {
             </a>
             <Link
               href="/iletisim"
-              className="px-6 py-2.5 bg-[var(--color-gold)] hover:bg-[var(--color-gold-dark)] text-[var(--color-dark)] text-xs font-black tracking-widest uppercase rounded-sm transition-all duration-300 shadow-[0_4px_16px_rgba(200,169,81,0.35)] hover:shadow-[0_6px_24px_rgba(200,169,81,0.5)]"
+              className="px-6 py-2.5 bg-[var(--color-gold)] hover:bg-[var(--color-gold-dark)] text-[var(--color-dark)] text-sm font-semibold rounded-sm transition-all duration-300 "
             >
               Teklif Al
             </Link>
@@ -107,7 +108,7 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="flex items-center justify-between py-4 border-b border-white/10 text-white hover:text-[var(--color-gold)] font-semibold tracking-wider uppercase text-sm transition-colors duration-300"
+                className="flex items-center justify-between py-4 border-b border-white/10 text-white hover:text-[var(--color-gold)] font-medium text-sm transition-colors duration-300"
               >
                 {link.label}
                 <ChevronRight size={16} className="text-[var(--color-gray-400)]" />

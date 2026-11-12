@@ -8,18 +8,19 @@ export default function Footer() {
   return (
     <footer className="bg-[var(--color-dark)] text-white">
       {/* Main footer */}
-      <div className="max-w-7xl mx-auto px-6 py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div className="site-container py-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="inline-block mb-6" aria-label="Epoksiciniz ana sayfa">
+            <Link href="/" className="inline-flex items-center gap-3 mb-4" aria-label="Epoksiciniz ana sayfa">
               <Image
                 src="/images/cl-zemin-logo.jpg"
                 alt="CL Zemin – Epoksi Zemin Kaplama"
                 width={375}
                 height={375}
-                className="h-36 w-36 rounded-sm object-contain"
+                className="h-16 w-16 rounded-sm object-contain"
               />
+              <span className="brand-name">Epoksiciniz<span>Zemin uygulamaları</span></span>
             </Link>
             <p className="text-[var(--color-gray-400)] text-sm leading-relaxed mb-6">
               Epoksi, şap ve dekoratif zemin uygulamalarında projenize uygun çözümler.
@@ -71,12 +72,12 @@ export default function Footer() {
           {/* Services */}
           <div>
             <h4
-              className="text-white font-black text-sm tracking-widest uppercase mb-6"
+              className="text-white font-black text-sm mb-4"
               style={{ fontFamily: 'var(--font-heading)' }}
             >
               Hizmetlerimiz
             </h4>
-            <ul className="flex flex-col gap-3">
+            <ul className="flex flex-col gap-2">
               {SERVICES.map((s) => (
                 <li key={s.id}>
                   <Link
@@ -94,12 +95,12 @@ export default function Footer() {
           {/* Quick links */}
           <div>
             <h4
-              className="text-white font-black text-sm tracking-widest uppercase mb-6"
+              className="text-white font-black text-sm mb-4"
               style={{ fontFamily: 'var(--font-heading)' }}
             >
               Hızlı Bağlantılar
             </h4>
-            <ul className="flex flex-col gap-3">
+            <ul className="flex flex-col gap-2">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
                   <Link
@@ -126,7 +127,7 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <h4
-              className="text-white font-black text-sm tracking-widest uppercase mb-6"
+              className="text-white font-black text-sm mb-4"
               style={{ fontFamily: 'var(--font-heading)' }}
             >
               İletişim
@@ -163,25 +164,11 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-white/8">
-        <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-3">
+        <div className="site-container py-5 flex flex-col md:flex-row items-center justify-between gap-3">
           <p className="text-[var(--color-gray-400)] text-xs">
             © {new Date().getFullYear()} {SITE.name}. Tüm hakları saklıdır.
           </p>
-          <div className="flex items-center gap-4">
-            <Link
-              href="/gizlilik"
-              className="text-[var(--color-gray-400)] hover:text-[var(--color-gold)] text-xs transition-colors duration-300"
-            >
-              Gizlilik Politikası
-            </Link>
-            <span className="text-white/20">|</span>
-            <Link
-              href="/kvkk"
-              className="text-[var(--color-gray-400)] hover:text-[var(--color-gold)] text-xs transition-colors duration-300"
-            >
-              KVKK
-            </Link>
-          </div>
+
         </div>
       </div>
     </footer>
